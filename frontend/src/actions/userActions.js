@@ -56,7 +56,7 @@ export const signin = (email, password) => async (dispatch) => {
     });
   }
 };
-// por alguna razon se duplico : document.location.location
+// por alguna razon se duplico : document.location.location - SOLVED!!
 export const signout = () => (dispatch) => {
   localStorage.removeItem('userInfo');
   localStorage.removeItem('cartItems');
