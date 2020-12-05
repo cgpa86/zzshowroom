@@ -56,13 +56,13 @@ export const signin = (email, password) => async (dispatch) => {
     });
   }
 };
-
+// por alguna razon se duplico : document.location.location
 export const signout = () => (dispatch) => {
   localStorage.removeItem('userInfo');
   localStorage.removeItem('cartItems');
   localStorage.removeItem('shippingAddress');
   dispatch({ type: USER_SIGNOUT });
-  document.location.location.href = '/signin';
+  document.location.href = '/signin';
 };
 
 export const detailsUser = (userId) => async (dispatch, getState) => {
