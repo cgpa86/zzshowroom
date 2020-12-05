@@ -85,6 +85,19 @@ button {
   background-color: #f8f8f8;
   cursor: pointer;
 }
+  .button-usr-delete{
+    background-color: #eb586c;
+    color:#f0f0f0;
+    font-weight: bold;
+  }
+    .button-usr-edit{
+      background-color: #3cbe00;
+      color:#f0f0f0;
+      font-weight: bold;
+
+
+  }
+
 input:hover,
 select:hover,
 textarea:hover,
@@ -92,7 +105,7 @@ button:hover {
   border: 0.1rem #ff002b solid;
 }
 button.primary {
-  background-color: #72f040;
+  background-color: #48ff00;
   font-weight: bold;
   color: #ffffff;
 }
