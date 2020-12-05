@@ -27,10 +27,10 @@ body {
 }
 header {
   grid-area: header;
-  background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
-          linear-gradient(127deg, rgba(182, 0, 167, 0.836), rgba(0,255,0,0) 70.71%),
-          linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
-          color:#f1bce4;
+  background: rgb(131,58,180);
+  background: radial-gradient(circle, rgba(131,58,180,1) 0%, rgba(253,29,195,1) 50%, rgba(228,46,14,1) 100%); 
+  
+  color:#f1bce4;
           display:flex;  
           justify-content:space-between;
           align-items: center;    
@@ -43,7 +43,7 @@ main {
 footer {
   grid-area: footer;
   background-color: #250050;
-  color: #912c8c;
+  color: #df25d5;
 }
 /* Common */
 h1 {
