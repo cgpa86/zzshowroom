@@ -42,7 +42,7 @@ function App() {
         <header className="row">
           <div>
             <Link className="brand" to="/">
-              Zazushowroom®
+              Zazushowroom
             </Link>
           </div>
           <div>
@@ -129,7 +129,7 @@ function App() {
         </main>
         {/* <footer className="row center">Todos los derechos Reservados | by p.a.c.g </footer> */}
         <footer className="row center">
-        Todos los derechos Reservados | by p.a.c.g
+          Todos los Derechos Reservados | by PACG® {"    "}
         <Grid item >
                     <IconButton >
                         <InstagramIcon />
@@ -151,7 +151,7 @@ function App() {
                         </a>
                      </IconButton>                  
                 </Grid>
-
+                
            </footer>
 
       </div>
