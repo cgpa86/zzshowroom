@@ -20,6 +20,13 @@ import ProductEditScreen from './screens/ProductEditScreen';
 import OrderListScreen from './screens/OrderListScreen';
 import UserListScreen from './screens/UserListScreen';
 
+import {Grid, IconButton} from '@material-ui/core';
+
+import InstagramIcon from '@material-ui/icons/Instagram';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import WebIcon from '@material-ui/icons/Web';
+
+
 function App() {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
@@ -35,7 +42,7 @@ function App() {
         <header className="row">
           <div>
             <Link className="brand" to="/">
-              Zazushowroom | Ropa y Accesorios
+              Zazushowroom®
             </Link>
           </div>
           <div>
@@ -120,7 +127,33 @@ function App() {
                      <AdminRoute path="/userlist" component={UserListScreen}></AdminRoute>
           <Route path="/" component={HomeScreen} exact></Route>
         </main>
-        <footer className="row center">Todos los derechos Reservados | by p.a.c.g </footer>
+        {/* <footer className="row center">Todos los derechos Reservados | by p.a.c.g </footer> */}
+        <footer className="row center">
+        Todos los derechos Reservados | by p.a.c.g
+        <Grid item >
+                    <IconButton >
+                        <InstagramIcon />
+                        <a href="https://www.instagram.com/zazu.s" target="_blank" rel="noopener noreferrer">
+                        Ig
+                        </a>
+                    </IconButton>                   
+                        <IconButton >
+                         <FacebookIcon />
+                         <a href="https://www.facebook.com/zazu.showroom" target="_blank" rel="noopener noreferrer">
+                            Fb
+                            </a>
+                         </IconButton>
+
+                         <IconButton >
+                    <WebIcon/>
+                    <a href="https://www.zazushowroom.com" target="_blank" rel="noopener noreferrer">
+                        Web
+                        </a>
+                     </IconButton>                  
+                </Grid>
+
+           </footer>
+
       </div>
     </BrowserRouter>
   );
