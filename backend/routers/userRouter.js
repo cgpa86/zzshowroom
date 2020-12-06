@@ -31,7 +31,7 @@ userRouter.post(
         return;
       }
     }
-    res.status(401).send({ message: 'Invalid email or password' });
+    res.status(401).send({ message: 'Email Inválido' });
   })
 );
 
@@ -61,7 +61,7 @@ userRouter.get(
     if (user) {
       res.send(user);
     } else {
-      res.status(404).send({ message: 'User Not Found' });
+      res.status(404).send({ message: 'Usuario no encontrado' });
     }
   })
 );
@@ -94,6 +94,42 @@ userRouter.get(
   expressAsyncHandler(async (req, res) => {
     const users = await User.find({});
     res.send(users);
+  })
+);
+userRouter.delete(
+  '/:id',
+  isAuth,
+  isAdmin,
+  expressAsyncHandler(async (req, res) => {
+    const user = await User.findById(req.params.id);
+    if (user) {
+      if (user.email === 'aranza@gmail.com') {
+        res.status(400).send({ message: 'No puedes eliminar al Administrador!' });
+        return;
+      }
+      const deleteUser = await user.remove();
+      res.send({ message: 'Usuario Eliminado', user: deleteUser });
+    } else {
+      res.status(404).send({ message: 'Usuario no encontrado' });
+    }
+  })
+);
+userRouter.put(
+  '/:id',
+  isAuth,
+  isAdmin,
+  expressAsyncHandler(async (req, res) => {
+    const user = await User.findById(req.params.id);
+    if (user) {
+      user.name = req.body.name || user.name;
+      user.email = req.body.email || user.email;
+      user.isSeller = req.body.isSeller || user.isSeller;
+      user.isAdmin = req.body.isAdmin || user.isAdmin;
+      const updatedUser = await user.save();
+      res.send({ message: 'Usuario Actualizado', user: updatedUser });
+    } else {
+      res.status(404).send({ message: 'Usuario no encontrado' });
+    }
   })
 );
 export default userRouter;

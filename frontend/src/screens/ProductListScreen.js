@@ -92,7 +92,7 @@ export default function ProductListScreen(props) {
                 <td>
                   <button
                     type="button"
-                    className="small"
+                    className="button-usr-edit"
                     onClick={() =>
                       props.history.push(`/product/${product._id}/edit`)
                     }
@@ -101,7 +101,7 @@ export default function ProductListScreen(props) {
                   </button>
                   <button
                     type="button"
-                    className="small"
+                    className="button-usr-delete"
                     onClick={() => deleteHandler(product)}
                   >
                     Borrar
