@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter, Link, Route } from 'react-router-dom';
 import { signout } from './actions/userActions';
@@ -27,8 +27,27 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import WebIcon from '@material-ui/icons/Web';
 
+//probando material ui darkmode
+import { Switch, createMuiTheme, ThemeProvider, Paper,FormHelperText} from '@material-ui/core';
+
+
 
 function App() {
+
+//material ui dark mode 
+const [darkState, setDarkState] = useState(false);
+const palletType = darkState ? "dark" : "light";
+const darkTheme = createMuiTheme({
+  palette: {
+    type: palletType,
+  }
+});
+const handleThemeChange = () => {
+  setDarkState(!darkState);
+};
+  
+
+
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
   const userSignin = useSelector((state) => state.userSignin);
@@ -37,15 +56,20 @@ function App() {
   const signoutHandler = () => {
     dispatch(signout());
   };
+
+
   return (
+   
+
     <BrowserRouter>
       <div className="grid-container">
         <header className="row">
           <div>
             <Link className="brand" to="/">
-              Zazushowroom
+            Zazushowroom | Ropa y Accesorios
             </Link>
           </div>
+        
           <div>
             <Link to="/cart">
               Cesta
@@ -73,7 +97,7 @@ function App() {
                 </ul>
               </div>
             ) : (
-              <Link to="/signin">Log In</Link>
+              <Link to="/signin">Sign In</Link>
             )}
             {userInfo && userInfo.isAdmin && (
               <div className="dropdown">
@@ -97,8 +121,18 @@ function App() {
               </div>
             )}
           </div>
+
         </header>
+        <ThemeProvider theme={darkTheme}> 
+     <Paper component='div' > 
+      
         <main>
+
+        {/* Material-UI botón modo oscuro */}
+        <Switch checked={darkState} onChange={handleThemeChange}  />
+      <FormHelperText>Modo Oscuro</FormHelperText>
+              {/* Material-UI botón modo oscuro */}
+
           <Route path="/cart/:id?" component={CartScreen}></Route>
           <Route path="/product/:id" component={ProductScreen} exact></Route>
           <Route
@@ -133,9 +167,10 @@ function App() {
                      <AdminRoute path="/userlist" component={UserListScreen}></AdminRoute>
           <Route path="/" component={HomeScreen} exact></Route>
         </main>
-        {/* <footer className="row center">Todos los derechos Reservados | by p.a.c.g </footer> */}
+       </Paper> 
+    </ThemeProvider>
         <footer className="row center">
-          Todos los Derechos Reservados | by PACG® {"    "}
+          Zazushowroom® 2020 | Todos los Derechos Reservados | by PACG {"    "}
         <Grid item >
                     <IconButton >
                         <InstagramIcon />
@@ -162,6 +197,7 @@ function App() {
 
       </div>
     </BrowserRouter>
+  
   );
 }
 

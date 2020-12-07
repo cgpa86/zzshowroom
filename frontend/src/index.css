@@ -28,7 +28,7 @@ body {
 header {
   grid-area: header;
   background: rgb(131,58,180);
-  background: radial-gradient(circle, rgba(131,58,180,1) 0%, rgba(253,29,195,1) 50%, rgba(228,46,14,1) 100%); 
+  background: radial-gradient(circle, rgba(131,58,180,1) 0%, rgba(253,29,195,1) 50%, rgb(255, 89, 12) 100%); 
   
   color:#f1bce4;
           display:flex;  
@@ -42,7 +42,7 @@ main {
 }
 footer {
   grid-area: footer;
-  background-color: #250050;
+  background-color: #300036;
   color: #df25d5;
 }
 /* Common */
@@ -59,7 +59,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #ff8000;
+  color: #fffb00;
 }
 ul {
   padding: 0;
@@ -173,10 +173,11 @@ img.large {
 
 /* Card */
 .card {
-  border: 0.1rem #c0c0c0 solid;
-  background-color: #f8f8f8;
+  border: 0.1rem #ff00c8 solid;
+  background-color: #ffeaf6;
   border-radius: 0.5rem;
   margin: 1rem;
+  color: #023f02;
 }
 .card-body {
   padding: 1rem;
@@ -248,7 +249,7 @@ img.large {
   min-width: 12rem;
   padding: 1rem;
   z-index: 1;
-  background-color: #ac083e;
+  background-color: #e91b00;
   margin: 0;
   margin-top: 0.4rem;
   border-radius: 0.5rem;
@@ -274,7 +275,7 @@ img.large {
   border-collapse: collapse;
 }
 .table tbody tr:nth-of-type(odd) {
-  background-color: #f4f4f4;
+  background-color: #e0c4fa;
 }
 .table td,
 .table th {

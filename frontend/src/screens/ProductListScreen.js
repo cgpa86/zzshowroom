@@ -54,7 +54,7 @@ export default function ProductListScreen(props) {
   return (
     <div>
       <div className="row">
-        <h1>Products</h1>
+        <h1>Productos</h1>
         <button type="button" className="primary" onClick={createHandler}>
           Crear Producto
         </button>
