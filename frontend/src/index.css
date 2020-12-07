@@ -59,7 +59,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #fffb00;
+  color: #ffa600;
 }
 ul {
   padding: 0;
@@ -91,7 +91,7 @@ button {
     font-weight: bold;
   }
     .button-usr-edit{
-      background-color: #3cbe00;
+      background-color: #0ac266;
       color:#f0f0f0;
       font-weight: bold;
 
@@ -217,7 +217,7 @@ img.large {
 }
 .alert-danger {
   color: #a02020;
-  background-color: #ffe0e0;
+  background-color: #f5c3c3;
 }
 .alert-success {
   color: #20a020;
