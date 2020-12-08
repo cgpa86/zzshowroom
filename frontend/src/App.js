@@ -30,6 +30,11 @@ import WebIcon from '@material-ui/icons/Web';
 //probando material ui darkmode
 import { Switch, createMuiTheme, ThemeProvider, Paper,FormHelperText} from '@material-ui/core';
 
+import SearchBox from './components/SearchBox';
+import SearchScreen from './screens/SearchScreen';
+
+import MapScreen from './screens/MapScreen';
+
 
 
 function App() {
@@ -66,8 +71,17 @@ const handleThemeChange = () => {
         <header className="row">
           <div>
             <Link className="brand" to="/">
-            Zazushowroom | Ropa y Accesorios
+            Zazushowroom
             </Link>
+          </div>
+
+
+          <div>
+            <Route
+              render={({ history }) => (
+                <SearchBox history={history}></SearchBox>
+              )}
+            ></Route>
           </div>
         
           <div>
@@ -147,10 +161,20 @@ const handleThemeChange = () => {
           <Route path="/placeorder" component={PlaceOrderScreen}></Route>
           <Route path="/order/:id" component={OrderScreen}></Route>
           <Route path="/orderhistory" component={OrderHistoryScreen}></Route>
+
+          <Route
+            path="/search/name/:name?"
+            component={SearchScreen}
+            exact
+          ></Route>
+
           <PrivateRoute
             path="/profile"
             component={ProfileScreen}
           ></PrivateRoute>
+
+<PrivateRoute path="/map" component={MapScreen}></PrivateRoute>
+
           <AdminRoute
             path="/productlist"
             component={ProductListScreen}

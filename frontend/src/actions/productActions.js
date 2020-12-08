@@ -16,7 +16,7 @@ import {
   PRODUCT_DELETE_FAIL,
   PRODUCT_DELETE_SUCCESS,
 } from '../constants/productConstants';
-
+// se añade filtro busqueda  name
 export const listProducts = () => async (dispatch) => {
   dispatch({
     type: PRODUCT_LIST_REQUEST,
